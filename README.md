@@ -1,2 +1,75 @@
-# FirstRepo
-FirstRepo
+# Todo List Android Application
+
+## Project Overview
+A simple yet comprehensive Todo List application for Android, built with Kotlin. It allows users to manage their tasks effectively with features like due dates, reminders, sorting, and filtering. Data is persisted locally using the Room persistence library.
+
+## Features
+- Core CRUD operations for todo items (add, view, edit, delete).
+- Data persistence using Room database.
+- UI for main list, add/edit screen, and individual items.
+- Marking items as complete (with visual strikethrough).
+- Sorting items by title, creation date, or completion status.
+- Filtering items by completion status (all, active, completed).
+- Due dates for todo items, including UI for setting them.
+- Reminder notifications for due dates using AlarmManager, BroadcastReceiver, and system notifications.
+- Runtime permission requests for notifications (POST_NOTIFICATIONS).
+- Checks and user guidance for exact alarm permissions.
+- Clean codebase with string resources and basic accessibility considerations.
+
+## Setup Instructions
+
+Follow these steps to get the project set up on your local machine:
+
+1.  **Prerequisites:**
+    *   **Android Studio:** Ensure you have the latest stable version of Android Studio installed. You can download it from [developer.android.com/studio](https://developer.android.com/studio).
+    *   **Android SDK:** Android Studio typically manages SDK installations. Make sure you have an SDK platform installed (e.g., Android API 33 (Tiramisu) or API 34 (Upside Down Cake)). You can manage SDKs via Android Studio's SDK Manager.
+    *   **JDK (Java Development Kit):** Android Studio usually comes with an embedded JDK. If not, or if you have specific JDK needs, ensure JDK 11 or higher is installed and configured.
+
+2.  **Get the Code:**
+    *   **Clone the repository:**
+        ```bash
+        git clone <repository_url>
+        ```
+        (Replace `<repository_url>` with the actual URL of this repository).
+    *   **Alternatively, download the ZIP:** If you have the project as a ZIP file, extract it to your desired location.
+
+3.  **Open in Android Studio:**
+    *   Launch Android Studio.
+    *   Select "Open" (or "Open an Existing Project").
+    *   Navigate to the directory where you cloned or extracted the `TodoListApp` project (the root folder containing `settings.gradle`).
+    *   Click "Open". Android Studio will then import the project and build it using Gradle. This might take a few minutes, especially on the first open, as it downloads dependencies.
+
+4.  **Gradle Sync:**
+    *   Once the project is open, Android Studio should automatically perform a Gradle sync. If not, you can trigger it manually by clicking "Sync Project with Gradle Files" (often an elephant icon with a sync arrow) in the toolbar.
+    *   Ensure the Gradle sync completes successfully. Check the "Build" output window for any errors.
+
+## Running the App
+
+Once the project is successfully set up and Gradle sync is complete, you can run the application:
+
+1.  **Select a Run Configuration:**
+    *   In Android Studio's toolbar, you should see a dropdown menu for run configurations (it usually defaults to "app"). Ensure "app" is selected.
+
+2.  **Choose a Device:**
+    *   Next to the run configuration dropdown, you'll see a device dropdown menu. You can:
+        *   **Run on an Android VirtualDevice (AVD):**
+            *   If you have AVDs set up, select one from the list.
+            *   If not, you can create one via "Tools" > "AVD Manager". Click "Create Virtual Device", select a hardware profile, a system image (e.g., Tiramisu API 33), and finish the setup. Once created, it should appear in the device dropdown.
+        *   **Run on a Physical Device:**
+            *   Connect your Android device to your computer via USB.
+            *   Enable "Developer Options" and "USB Debugging" on your device. (You can find instructions online by searching "enable developer options android [your device model]").
+            *   Your device should appear in the device dropdown. You might need to approve an authorization dialog on your device.
+
+3.  **Run the App:**
+    *   Click the "Run 'app'" button (the green play icon ▶️) in the toolbar.
+    *   Android Studio will build the app, install it on the selected device/emulator, and then launch it.
+    *   You can see the build progress in the "Build" window and any device logs in the "Logcat" window.
+
+4.  **Using the App:**
+    *   Once launched, you can interact with the Todo List application:
+        *   Add new tasks using the Floating Action Button.
+        *   Tap tasks to edit them.
+        *   Mark tasks as complete using the checkbox.
+        *   Swipe tasks to delete them.
+        *   Use the options menu (top-right) to sort and filter tasks.
+        *   Set due dates and times for tasks to receive reminder notifications.
