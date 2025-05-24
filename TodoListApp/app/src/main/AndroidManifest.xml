@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.todolistapp">
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- Required for exact alarms on API 31+ if targeting S+ -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <!-- Required for apps targeting API 33+ that use exact alarms set by non-exempt sources. -->
+    <!-- Not strictly needed if only using SCHEDULE_EXACT_ALARM and handling canScheduleExactAlarms() for API 31-32 -->
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TodoListApp"
+        tools:targetApi="31">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AddEditTodoActivity"
+            android:label="@string/title_activity_add_edit_todo">
+            <!-- Optional: Specify parent activity for Up navigation -->
+            <!-- <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" /> -->
+        </activity>
+
+        <receiver android:name=".TodoNotificationReceiver" android:enabled="true" android:exported="false"></receiver>
+
+    </application>
+
+</manifest>

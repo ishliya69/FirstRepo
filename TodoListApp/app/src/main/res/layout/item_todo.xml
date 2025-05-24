@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <CheckBox
+        android:id="@+id/checkBox_todo_completed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="16dp" />
+
+    <TextView
+        android:id="@+id/textView_todo_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:singleLine="true"
+        android:ellipsize="end"
+        app:layout_constraintStart_toEndOf="@id/checkBox_todo_completed"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Todo Item Title Example" />
+
+    <TextView
+        android:id="@+id/textView_todo_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        app:layout_constraintStart_toEndOf="@id/checkBox_todo_completed"
+        app:layout_constraintTop_toBottomOf="@id/textView_todo_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="4dp"
+        tools:text="This is a sample description for the todo item. It can span a couple of lines." />
+
+    <TextView
+        android:id="@+id/textView_item_due_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="?android:attr/textColorSecondary"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@id/checkBox_todo_completed"
+        app:layout_constraintTop_toBottomOf="@id/textView_todo_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"
+        tools:visibility="visible"
+        tools:text="Due: Mon, Jan 01, 2025 10:00" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
