@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">TodoListApp</string>
+
+    <!-- MainActivity Toasts -->
+    <string name="item_added">Item added: %s</string>
+    <string name="could_not_add_item_title_missing">Could not add item: Title missing</string>
+    <string name="add_item_cancelled">Add item cancelled</string>
+    <string name="item_updated">Item updated: %s</string>
+    <string name="edit_cancelled">Edit cancelled</string>
+    <string name="item_deleted">Item deleted: %s</string>
+    <string name="notification_permission_granted">Notification permission granted.</string>
+    <string name="notification_permission_denied">Notification permission denied. Reminders may not work.</string>
+    <string name="grant_exact_alarm_permission">Please grant permission to schedule exact alarms for reminders to work reliably.</string>
+
+    <!-- AddEditTodoActivity -->
+    <string name="title_cannot_be_empty">Title cannot be empty</string>
+    <string name="due_date_not_set">Due Date: Not Set</string>
+    <string name="title_add_todo">Add Todo</string>
+    <string name="title_edit_todo">Edit Todo</string>
+    <string name="button_set_due_date">Set Due Date</string> <!-- Also for content description -->
+
+    <!-- NotificationUtils -->
+    <string name="notification_channel_name">Todo Reminders</string>
+    <string name="notification_channel_description">Channel for Todo item reminders</string>
+    <string name="notification_title">Todo Reminder</string>
+    <string name="notification_text_prefix">Due: </string>
+
+    <!-- Existing strings from previous tasks (ensure they are still relevant) -->
+    <string name="add_todo_fab_content_desc">Add new todo item</string>
+    <string name="hint_todo_title">Enter todo title</string>
+    <string name="hint_todo_description">Enter description (optional)</string>
+    <string name="button_save">Save</string>
+
+    <string name="title_activity_add_edit_todo">Add/Edit Todo Item</string>
+</resources>
