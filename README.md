@@ -73,3 +73,39 @@ Once the project is successfully set up and Gradle sync is complete, you can run
         *   Swipe tasks to delete them.
         *   Use the options menu (top-right) to sort and filter tasks.
         *   Set due dates and times for tasks to receive reminder notifications.
+
+## Troubleshooting
+
+### Gradle Version Error
+
+**Error Message:**
+You might encounter an error message similar to:
+```
+Minimum supported Gradle version is 8.2. Current version is 7.4. If using the gradle wrapper, try editing the distributionUrl in ...\TodoListApp\gradle\wrapper\gradle-wrapper.properties to gradle-8.2-all.zip
+```
+
+**Cause:**
+This means the Android Gradle Plugin version used in the project requires Gradle version 8.2 or higher, but your environment is attempting to use an older version.
+
+**Solution:**
+The project is configured to use Gradle 8.2 via the Gradle wrapper. The necessary wrapper files, especially `TodoListApp/gradle/wrapper/gradle-wrapper.properties`, should be included in the project.
+
+1.  **Check for `gradle-wrapper.properties`:**
+    Ensure the file `TodoListApp/gradle/wrapper/gradle-wrapper.properties` exists.
+
+2.  **Create/Update `gradle-wrapper.properties`:**
+    If the file is missing or incorrect, create or replace it with the following content:
+    ```properties
+    distributionBase=GRADLE_USER_HOME
+    distributionPath=wrapper/dists
+    distributionUrl=https\://services.gradle.org/distributions/gradle-8.2-all.zip
+    zipStoreBase=GRADLE_USER_HOME
+    zipStorePath=wrapper/dists
+    ```
+    *(Note: You might need to create the `TodoListApp/gradle/wrapper/` directories if they don't exist).*
+
+3.  **Alternative (If Gradle is installed system-wide):**
+    If you have Gradle installed on your system, you can try navigating into the `TodoListApp` directory in your terminal and running `gradle wrapper --gradle-version 8.2`. This command can help generate or update the Gradle wrapper files. However, ensuring the `gradle-wrapper.properties` file has the correct `distributionUrl` as shown above is the most direct fix.
+
+4.  **Refresh Gradle Project:**
+    After ensuring the `gradle-wrapper.properties` file is correct, refresh your project in Android Studio (e.g., via "File" > "Sync Project with Gradle Files").
